@@ -2,6 +2,7 @@ local Players = game.Players
 local LocalPlayer = Players.LocalPlayer
 local ReplicatedFirst, ReplicatedStorage = game.ReplicatedFirst, game.ReplicatedStorage
 local CurrentCamera = workspace.CurrentCamera
+local Mouse = Players.GetMouse(Players)
 function NotObstructing(Destination, Ignore)
     local Origin = CurrentCamera.CFrame.Position
     local CheckRay = Ray.new(Origin, Destination - Origin)
