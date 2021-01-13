@@ -82,7 +82,7 @@
 			if Esp.Settings.Enabled then
 				local Pos, Vis = WorldToViewportPoint(Camera, root.Position)
 				if Vis then
-					local X = 2200 / Pos.Z - 25
+					local X = 2200 / Pos.Z - 5
 					local BoxSize = v2new(X, X * 1.4)
 					local Health = Esp.GetHealth(plr)
 					Holder.Name.Position = v2new(Pos.X, Pos.Y - BoxSize.X / 2 - (4 + Esp.Settings.TextSize))
