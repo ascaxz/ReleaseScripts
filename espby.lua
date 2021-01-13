@@ -23,7 +23,7 @@ local Camera = workspace.CurrentCamera
 local WorldToViewportPoint = Camera.WorldToViewportPoint
 local v2new = Vector2.new
 local Player = game:GetService("Players").LocalPlayer
-local TracerStart = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y - 30)
+local TracerStart = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y - 35)
 
 local CheckVis = newcclosure(function(esp, inview)
 	if not inview or (Esp.Settings.TeamCheck and Esp.TeamCheck(esp.Player)) or (esp.Root.Position - Camera.CFrame.Position).Magnitude > Esp.Settings.Range then
