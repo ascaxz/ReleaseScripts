@@ -82,14 +82,14 @@
 			if Esp.Settings.Enabled then
 				local Pos, Vis = WorldToViewportPoint(Camera, root.Position)
 				if Vis then
-					local X = 2200 / Pos.Z
+					local X = 2200 / Pos.Z - 25
 					local BoxSize = v2new(X, X * 1.4)
 					local Health = Esp.GetHealth(plr)
 					Holder.Name.Position = v2new(Pos.X, Pos.Y - BoxSize.X / 2 - (4 + Esp.Settings.TextSize))
 					Holder.Box.Size = BoxSize
 					Holder.Box.Position = v2new(Pos.X - BoxSize.X / 2, Pos.Y - BoxSize.Y / 2)
 					Holder.Health.Color = Health > 0.66 and Color3.new(0, 1, 0) or Health < 0.33 and Color3.new(1, 0, 0) or Color3.new(1, 1, 0)
-					Holder.Health.Size = v2new(1.5, BoxSize.Y * Health)
+					Holder.Health.Size = v2new(3, BoxSize.Y * Health)
 					Holder.Health.Position = v2new(Pos.X - (BoxSize.X / 2 + 4), (Pos.Y - BoxSize.Y / 2) + ((1 - Health) * BoxSize.Y))
 					Holder.Distance.Text = math.floor((root.Position - Camera.CFrame.Position).Magnitude) .. " Studs"
 					Holder.Distance.Position = v2new(Pos.X, Pos.Y + BoxSize.X / 2 + 4)
