@@ -45,7 +45,9 @@ end)
 Esp.Add = function(plr, root, col)
 	if Esp.Container[root] then
 		for i, v in next, Esp.Container[root] do
-			v:Remove()
+			pcall(function()
+                v:Remove()
+            end)
 		end
 		Esp.Container[root] = nil
 	end
