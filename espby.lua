@@ -45,9 +45,16 @@ end)
 Esp.Add = function(plr, root, col)
 	if Esp.Container[root] then
 		for i, v in next, Esp.Container[root] do
-			pcall(function()
-                v:Remove()
-            end)
+			if type(v) == "table" then
+			    local mt = getrawmetatable(v)
+			    if mt then
+			        if mt.__type and mt.__type == "Text" or mt.__type == "Square" or mt.__type == "Line" then
+			            v:Remove() 
+			        end
+			    end
+			elseif typeof(v) == "Instance" then
+		        v:Destroy()
+			end
 		end
 		Esp.Container[root] = nil
 	end
