@@ -44,3 +44,4 @@ local Windows = {} do
         }, Menu)
     end
 end
+return Windows
