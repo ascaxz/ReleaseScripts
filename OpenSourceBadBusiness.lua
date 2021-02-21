@@ -17,6 +17,7 @@ if not modules or (modules and not rawget(modules, "Network")) then
 end
 if not controlfunc then
     print("Failed To Get Control Function"); -- :(
+    return;
 end
 local toggles = {
     aimbot = false,
